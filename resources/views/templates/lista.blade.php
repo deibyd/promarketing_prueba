@@ -4,31 +4,37 @@
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
     <title>@yield('titulo','Listado')</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
 
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
     <style type="text/css">
+
+/*        td .btn {
+            width: 100%
+        }
 
 .registerinicio{
     /*background: -webkit-linear-gradient(left, #3931af, #00c6ff);
     background: -webkit-linear-gradient(left, #020110, #00c6ff);
     background: -webkit-linear-gradient(left,#293437, #00c6ff);*/
-    background: -webkit-linear-gradient(left,#3f7483, #0dc9ff);
+/*    background: -webkit-linear-gradient(left,#3f7483, #0dc9ff);
     margin-top: 3%;
     /*padding: 3%; */
-}
+/*}
 
 .register{
     /*background: -webkit-linear-gradient(left, #3931af, #00c6ff);
     background: -webkit-linear-gradient(left, #020110, #00c6ff);
     background: -webkit-linear-gradient(left,#293437, #00c6ff);*/
-    background: -webkit-linear-gradient(left,#3f7483, #0dc9ff);
-    /*margin-top: 3%;*/
-    padding: 3%;
+/*    background: -webkit-linear-gradient(left,#3f7483, #0dc9ff);
+/*margin-top: 3%;*/
+/*    padding: 3%;
 }
 
 .register-left{
@@ -125,8 +131,8 @@
 
 
 .register .register-form .form-control {
-   /* border-radius: 1rem;*/
-}
+ /* border-radius: 1rem;*/
+/*}
 
 
 
@@ -202,13 +208,50 @@ footer {
   width: 20%;
 
 }
-    </style>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+*/
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+    padding-top: 5.5rem;
+}
+.item-left {
+    float: left;
+}
+.item-right {
+    float: right;
+    margin: 10px 30px 0 0;
+}
+h1 {
+    color: #196baf;
+}
+
+
+</style>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </head>
 <body> 
-
-@yield('contenido')
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Promarketing Chile</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('juego.index') }}">Juegos<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav text-right">
+                <li class="nav-item">
+                    <span class="nav-link active" sty>Bienvenido David</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cerrar sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    @yield('contenido')
 
 </body>
 </html>

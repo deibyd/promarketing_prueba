@@ -17,7 +17,7 @@ class CreateJuegosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre', 50);
             $table->string('url');
-            $table->string('descripcion');
+            $table->longText('descripcion');
             $table->string('url_imagen');
             $table->char('estado',20);
             $table->timestamps();

@@ -24,3 +24,8 @@ Route::resource('juego', 'JuegoController');
 Route::get('cancelar', function(){
 	return redirect()->route('juego.index')->with('cancelar', 'Acción cancelada!');
 })->name('cancelar');
+
+// otras forma de ver el middleware
+//Route::get('juego/{id}/confirm', 'JuegoController@confirm')->name('juego.confirm')->middleware('auth');
+//Route::get('juego/{id}/confirm', ['middleware'=>'auth'], 'JuegoController@confirm')->name('juego.confirm')->middleware('auth');
+Route::get('juego/{id}/confirm', 'JuegoController@confirm')->name('juego.confirm')->middleware('auth');
