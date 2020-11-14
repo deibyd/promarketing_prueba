@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('juego.index');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('juego', 'JuegoController');
 
@@ -28,4 +28,4 @@ Route::get('cancelar', function(){
 // otras forma de ver el middleware
 //Route::get('juego/{id}/confirm', 'JuegoController@confirm')->name('juego.confirm')->middleware('auth');
 //Route::get('juego/{id}/confirm', ['middleware'=>'auth'], 'JuegoController@confirm')->name('juego.confirm')->middleware('auth');
-Route::get('juego/{id}/confirm', 'JuegoController@confirm')->name('juego.confirm')->middleware('auth');
+Route::get('juego/{id}/confirm', 'JuegoController@confirm')->name('juego.confirm');
